@@ -1,0 +1,45 @@
+<%= form_for([@proyect,@pv]) do |f| %>
+  <% if @pv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pv.errors.count, "error") %> prohibited this pv from being saved:</h2>
+
+      <ul>
+      <% @pv.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+  <h2>Propuesta de Valor</h2>
+  <div class="field">
+    <%= f.label :productos %><br>
+    <%= f.text_area :productos, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :generadores %><br>
+    <%= f.text_area :generadores, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :eliminadores %><br>
+    <%= f.text_area :eliminadores, class:"form-control" %>
+  </div>
+  <h2>Segmento de Clientes</h2>
+  <div class="field">
+    <%= f.label :tareas %><br>
+    <%= f.text_area :tareas, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :ganancias %><br>
+    <%= f.text_area :ganancias, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :frustaciones %><br>
+    <%= f.text_area :frustaciones, class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar', class:"btn btn-info btn-lg" %>
+  </div>
+</div>
+<% end %>

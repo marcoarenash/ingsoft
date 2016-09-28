@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hipcli: MyText
+  hipprob: MyText
+  hipsol: MyText
+  invalidamos: MyText
+  validamos: MyText
+  proyect_id: 
+
+two:
+  hipcli: MyText
+  hipprob: MyText
+  hipsol: MyText
+  invalidamos: MyText
+  validamos: MyText
+  proyect_id: 

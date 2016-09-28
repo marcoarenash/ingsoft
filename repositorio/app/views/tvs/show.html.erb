@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <strong>Hipotesis del Cliente:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @tv.hipcli %>
+  </div>
+
+  <strong>Hipotesis del Problema:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @tv.hipprob %>
+  </div>
+
+  <strong>Hipotesis de la Solución:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @tv.hipsol %>
+  </div>
+
+  <strong>Que Invalidamos:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @tv.invalidamos %>
+  </div>
+
+  <strong>Que Validamos:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @tv.validamos %>
+  </div>
+
+</div>
+
+<%= link_to 'Editar', edit_proyect_tv_path(@proyect,@tv), class:"btn btn-primary pull-left" %>
+<%= link_to 'Regresar', proyect_tvs_path(@proyect), class:"btn btn-success pull-right" %>
+
+<h2>Volver a Proyectos</h2>
+<%= link_to 'Regresar a Proyectos', proyects_path, class:"btn btn-primary pull-left" %>

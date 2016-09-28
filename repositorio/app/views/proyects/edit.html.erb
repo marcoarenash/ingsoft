@@ -1,0 +1,16 @@
+<h1>Editar Proyecto</h1>
+
+<% if current_user.id == @proyect.user_id %>
+
+<%= render 'form' %>
+
+<%= link_to 'Mostrar', @proyect, class:"btn btn-primary pull-left" %>
+<%= link_to 'Regresar', proyects_path, class:"btn btn-success pull-right" %>
+
+<% else %>
+
+<h2>Acceso Denegado</h2>
+
+<%= link_to 'Regresar', proyects_path, class:"btn btn-success pull-right" %>
+
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <strong>Titulo:</strong>
+  <br>
+		<div class="container bg-success">
+  			<%= @proyect.titulo %>
+  	</div>
+
+  <strong>Descripción:</strong>
+  <br>
+		<div class="container bg-success">
+  			<%= @proyect.descripcion %>
+  	</div>
+
+</div>
+
+<% if current_user.id == @proyect.user_id %>
+
+<%= link_to 'Editar', edit_proyect_path(@proyect), class:"btn btn-primary pull-left" %>
+<%= link_to 'Regresar', proyects_path, class:"btn btn-success pull-right" %>
+
+<h2>Ver Bmc</h2>
+<%= link_to 'Index de Bmcs', proyect_bmcs_path(@proyect), class:"btn btn-primary pull-left" %>
+
+<% else %>
+
+<%= link_to 'Regresar', proyects_path, class:"btn btn-success pull-right" %>
+
+<% end %>

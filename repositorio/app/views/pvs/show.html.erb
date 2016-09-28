@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Propuesta de Valor</h2>
+
+<div class="container">
+
+  <strong>Productos:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.productos %>
+  </div>
+
+  <strong>Generadores:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.generadores %>
+  </div>
+
+  <strong>Eliminadores:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.eliminadores %>
+  </div>
+
+</div>
+
+<h2>Segmentos de Clientes</h2>
+
+<div class="container">
+
+  <strong>Tareas:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.tareas %>
+  </div>
+
+  <strong>Ganancias:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.ganancias %>
+  </div>
+
+  <strong>Frustaciones:</strong>
+  <br>
+  <div class="container bg-success">
+    <%= @pv.frustaciones %>
+  </div>
+
+</div>
+
+<%= link_to 'Editar', edit_proyect_pv_path(@proyect,@pv), class:"btn btn-primary pull-left" %>
+<%= link_to 'Regresar', proyect_pvs_path(@proyect), class:"btn btn-success pull-right" %>
+
+<h2>Ver Tv</h2>
+<%= link_to 'Index de Tabla de Validaciones', proyect_tvs_path(@proyect), class:"btn btn-primary pull-left" %>

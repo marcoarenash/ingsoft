@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Propuesta de Valor</h1>
+
+<div class="container">
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th>Productos</th>
+      <th>Generadores</th>
+      <th>Eliminadores</th>
+      <th>Tareas</th>
+      <th>Ganancias</th>
+      <th>Frustaciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pvs.each do |pv| %>
+      <tr>
+        <td><%= pv.productos %></td>
+        <td><%= pv.generadores %></td>
+        <td><%= pv.eliminadores %></td>
+        <td><%= pv.tareas %></td>
+        <td><%= pv.ganancias %></td>
+        <td><%= pv.frustaciones %></td>
+        <td><%= link_to 'Mostrar', proyect_pv_path(@proyect,pv) %></td>
+        <td><%= link_to 'Editar', edit_proyect_pv_path(@proyect,pv) %></td>
+        <td><%= link_to 'Eliminar', [@proyect,pv], method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<br>
+
+<%= link_to 'Nueva Propuesta de Valor', new_proyect_pv_path(@proyect,@pv), class:"btn btn-primary" %>
+
+<h2>Ver Bmcs</h2>
+<%= link_to 'Regresar a Bmcs', proyect_bmcs_path(@proyect), class:"btn btn-primary" %>

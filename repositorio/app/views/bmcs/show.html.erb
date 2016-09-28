@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <strong>Problema:</strong>
+  <br>
+  <div class="container bg-success">
+  	<%= @bmc.problema %>
+  </div>
+
+  <strong>Propuesta de  Valor:</strong>
+  <br>
+  <div class="container bg-success">
+  	<%= @bmc.propuesta %>
+  </div>
+
+  <strong>Cliente:</strong>
+  <br>
+  <div class="container bg-success">
+  	<%= @bmc.cliente %>
+  </div>
+
+</div>
+
+<%= link_to 'Editar', edit_proyect_bmc_path(@proyect,@bmc), class:"btn btn-primary pull-left" %>
+<%= link_to 'Regresar', proyect_bmcs_path(@proyect), class:"btn btn-success pull-right" %>
+
+<h2>Ver Pv</h2>
+<%= link_to 'Index de Propuesta de Valor', proyect_pvs_path(@proyect), class:"btn btn-primary pull-left" %>

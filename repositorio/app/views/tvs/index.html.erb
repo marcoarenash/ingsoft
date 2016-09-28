@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Tabla de Validaciones</h1>
+
+<div class="container">
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th>Hipotesis del Cliente</th>
+      <th>Hipotesis del Problema</th>
+      <th>Hipotesis de la Solución</th>
+      <th>Que Invalidamos</th>
+      <th>Que Validamos</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tvs.each do |tv| %>
+      <tr>
+        <td><%= tv.hipcli %></td>
+        <td><%= tv.hipprob %></td>
+        <td><%= tv.hipsol %></td>
+        <td><%= tv.invalidamos %></td>
+        <td><%= tv.validamos %></td>
+        <td><%= link_to 'Mostrar', proyect_tv_path(@proyect,tv) %></td>
+        <td><%= link_to 'Editar', edit_proyect_tv_path(@proyect,tv) %></td>
+        <td><%= link_to 'Eliminar', [@proyect,tv], method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<br>
+
+<%= link_to 'Nueva Tabla de Validaciones', new_proyect_tv_path(@proyect,@tv), class:"btn btn-primary" %>
+
+<h2>Ver Pvs</h2>
+<%= link_to 'Regresar a Propuesta de Valor', proyect_pvs_path(@proyect), class:"btn btn-primary" %>

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Bmcs</h1>
+
+<div class="container">
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th>Problema</th>
+      <th>Propuesta de valor</th>
+      <th>Cliente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bmcs.each do |bmc| %>
+      <tr>
+        <td><%= bmc.problema %></td>
+        <td><%= bmc.propuesta %></td>
+        <td><%= bmc.cliente %></td>
+        <td><%= link_to 'Mostrar', proyect_bmc_path(@proyect,bmc) %></td>
+        <td><%= link_to 'Editar', edit_proyect_bmc_path(@proyect,bmc) %></td>
+        <td><%= link_to 'Eliminar', [@proyect,bmc], method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<br>
+
+<%= link_to 'Nuevo Bmc', new_proyect_bmc_path(@proyect,@bmc), class:"btn btn-primary" %>
+
+<h2>Ver Proyectos</h2>
+<%= link_to 'Regresar a proyectos', proyects_path(@proyect), class:"btn btn-primary" %>

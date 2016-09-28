@@ -1,0 +1,31 @@
+<%= form_for([@proyect,@bmc]) do |f| %>
+  <% if @bmc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bmc.errors.count, "error") %> prohibited this bmc from being saved:</h2>
+
+      <ul>
+      <% @bmc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="field">
+    <%= f.label :problema %><br>
+    <%= f.text_area :problema, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :propuesta %><br>
+    <%= f.text_area :propuesta, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente %><br>
+    <%= f.text_area :cliente, class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar', class:"btn btn-info btn-lg" %>
+  </div>
+</div>
+<% end %>

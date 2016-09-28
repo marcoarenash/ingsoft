@@ -1,0 +1,39 @@
+<%= form_for([@proyect,@tv]) do |f| %>
+  <% if @tv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tv.errors.count, "error") %> prohibited this tv from being saved:</h2>
+
+      <ul>
+      <% @tv.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="field">
+    <%= f.label :hipcli, 'Hipotesis del Clientes' %><br>
+    <%= f.text_area :hipcli, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :hipprob, 'Hipotesis del Problema' %><br>
+    <%= f.text_area :hipprob, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :hipsol, 'Hipotesis de la Solución' %><br>
+    <%= f.text_area :hipsol, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :invalidamos, 'Que Invalidamos' %><br>
+    <%= f.text_area :invalidamos, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :validamos, 'Que Validamos' %><br>
+    <%= f.text_area :validamos, class:"form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Guardar', class:"btn btn-info btn-lg" %>
+  </div>
+</div>
+<% end %>
